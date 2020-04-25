@@ -19,6 +19,6 @@ Be careful though : The more you kill, the harder it gets
 
 **Space bar** to use the bow (can keep pressed)
 
-## Authors
+## Author
 
 Codes, music and designs by **Florent Mouton** - [fmo-dev](https://github.com/fmo-dev)
