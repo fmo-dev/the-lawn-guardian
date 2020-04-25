@@ -1,6 +1,6 @@
 # The Lawn Guardian
 
-The Lawn Guardian is a mini-game created with Godot and the langage GDScript.
+The Lawn Guardian is a game created with Godot and the langage GDScript.
 Godot is require to see/edit the content of this repository.
 
 You still can play the game by clicking on executable/The Lawn Guardian.exe
