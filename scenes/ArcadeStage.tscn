@@ -1,0 +1,135 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/interface/panel.png" type="Texture" id=2]
+[ext_resource path="res://scripts/Stage.gd" type="Script" id=3]
+[ext_resource path="res://assets/Niveau/life.png" type="Texture" id=4]
+[ext_resource path="res://scenes/MusicManager.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/font/Seagram tfb.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://assets/decor/bg-stageOne.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 42
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 46
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 69
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 46
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
+[node name="ArcadeStage" type="Node2D"]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="DumbTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="mainBg" type="Sprite" parent="."]
+position = Vector2( 960, 956 )
+scale = Vector2( 1, 1.00405 )
+z_index = -2
+texture = ExtResource( 2 )
+
+[node name="stageBg" type="Sprite" parent="."]
+position = Vector2( 960, 416 )
+z_index = -2
+texture = ExtResource( 7 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 184, 600 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="lifeSprite" type="Sprite" parent="."]
+position = Vector2( 168.755, 985.585 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 4 )
+
+[node name="VictoryTime" type="Timer" parent="."]
+wait_time = 0.6
+
+[node name="MusicManager" parent="." instance=ExtResource( 5 )]
+
+[node name="StageTimer" type="Timer" parent="."]
+wait_time = 0.01
+one_shot = true
+autostart = true
+
+[node name="gold" type="Label" parent="."]
+modulate = Color( 0.807843, 0.6, 0.2, 1 )
+margin_left = 360.0
+margin_top = 949.283
+margin_right = 568.0
+margin_bottom = 1002.28
+custom_fonts/font = SubResource( 1 )
+text = "0000"
+align = 2
+valign = 1
+max_lines_visible = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="goldText" type="Label" parent="."]
+modulate = Color( 0.807843, 0.6, 0.2, 1 )
+margin_left = 584.0
+margin_top = 944.0
+margin_right = 673.0
+margin_bottom = 1008.0
+custom_fonts/font = SubResource( 2 )
+text = "Gold"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="score" type="Label" parent="."]
+margin_left = 880.0
+margin_top = 920.0
+margin_right = 1040.0
+margin_bottom = 1032.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "00"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="life" type="Label" parent="."]
+margin_left = 184.0
+margin_top = 941.736
+margin_right = 248.0
+margin_bottom = 1006.74
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="timeout" from="DumbTimer" to="." method="launch_Barbarian"]
+[connection signal="timeout" from="VictoryTime" to="." method="victory"]
+[connection signal="timeout" from="StageTimer" to="." method="_on_Timer_timeout"]

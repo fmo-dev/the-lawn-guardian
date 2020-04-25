@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ah2.wav-c29f38d9e26c6cc1eef73b31e9a9c8c4.sample"
+
+[deps]
+
+source_file="res://assets/soundEffects/ah2.wav"
+dest_files=[ "res://.import/ah2.wav-c29f38d9e26c6cc1eef73b31e9a9c8c4.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

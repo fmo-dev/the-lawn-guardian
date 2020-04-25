@@ -1,0 +1,495 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://scripts/Market.gd" type="Script" id=1]
+[ext_resource path="res://assets/soundEffects/coin.wav" type="AudioStream" id=2]
+[ext_resource path="res://assets/font/Seagram tfb.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 144
+outline_size = 8
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 144
+outline_size = 8
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 144
+outline_size = 8
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 144
+outline_size = 8
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 144
+outline_size = 8
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 144
+outline_size = 8
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 144
+outline_size = 8
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 152
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 214
+outline_size = 6
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[node name="Market" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -208.0
+margin_top = -112.0
+margin_right = -1504.0
+margin_bottom = -928.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = 48.0
+margin_top = -184.0
+margin_right = 680.0
+margin_bottom = 328.0
+color = Color( 0.145098, 0.12549, 0.12549, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color( 0.831373, 0.756863, 0.756863, 1 )
+margin_left = 56.0
+margin_top = -176.0
+margin_right = 99.0
+margin_bottom = -136.0
+rect_scale = Vector2( 14.2396, 12.371 )
+color = Color( 0.290196, 0.25098, 0.25098, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+margin_left = 200.0
+margin_top = -168.0
+margin_right = 512.0
+margin_bottom = -80.0
+color = Color( 0.0980392, 0.0705882, 0.0705882, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+margin_left = 208.0
+margin_top = -160.0
+margin_right = 504.0
+margin_bottom = -88.0
+color = Color( 0.309804, 0.0431373, 0.0431373, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelSpeedAttack" type="Label" parent="."]
+margin_left = 112.0
+margin_top = 136.0
+margin_right = 1072.0
+margin_bottom = 318.0
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/font = SubResource( 1 )
+text = "Arrow / sec"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelGoldDigger" type="Label" parent="."]
+margin_left = 112.0
+margin_top = 256.0
+margin_right = 1072.0
+margin_bottom = 438.0
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/font = SubResource( 2 )
+text = "Gold Digger "
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpeedAttack" type="Label" parent="."]
+margin_left = 304.0
+margin_top = 136.0
+margin_right = 584.0
+margin_bottom = 318.0
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/font = SubResource( 3 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelSpeedMovement" type="Label" parent="."]
+margin_left = 112.0
+margin_top = 72.0
+margin_right = 1032.0
+margin_bottom = 254.0
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/font = SubResource( 4 )
+text = "Speed "
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpeedMovemen" type="Label" parent="."]
+margin_left = 304.0
+margin_top = 72.0
+margin_right = 584.0
+margin_bottom = 254.0
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/font = SubResource( 5 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelLife" type="Label" parent="."]
+margin_left = 112.0
+margin_top = 8.0
+margin_right = 1032.0
+margin_bottom = 190.0
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/font = SubResource( 6 )
+text = "Life"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Life" type="Label" parent="."]
+margin_left = 296.0
+margin_right = 578.0
+margin_bottom = 182.0
+rect_scale = Vector2( 0.2, 0.2 )
+rect_pivot_offset = Vector2( 13.2564, 8.50535 )
+custom_fonts/font = SubResource( 7 )
+text = "000"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LifePrice" type="Label" parent="."]
+modulate = Color( 0.807843, 0.6, 0.2, 1 )
+margin_left = 416.0
+margin_right = 1003.0
+margin_bottom = 182.0
+rect_scale = Vector2( 0.2, 0.2 )
+rect_pivot_offset = Vector2( 13.2564, 8.50535 )
+custom_fonts/font = SubResource( 7 )
+text = "000000"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpeedPrice" type="Label" parent="."]
+modulate = Color( 0.807843, 0.6, 0.2, 1 )
+margin_left = 416.0
+margin_top = 64.0
+margin_right = 1003.0
+margin_bottom = 246.0
+rect_scale = Vector2( 0.2, 0.2 )
+rect_pivot_offset = Vector2( 13.2564, 8.50535 )
+custom_fonts/font = SubResource( 7 )
+text = "000000"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpeedAttackPrice" type="Label" parent="."]
+modulate = Color( 0.807843, 0.6, 0.2, 1 )
+margin_left = 416.0
+margin_top = 128.0
+margin_right = 1003.0
+margin_bottom = 310.0
+rect_scale = Vector2( 0.2, 0.2 )
+rect_pivot_offset = Vector2( 13.2564, 8.50535 )
+custom_fonts/font = SubResource( 7 )
+text = "000000"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ArrowStrengthPrice" type="Label" parent="."]
+modulate = Color( 0.807843, 0.6, 0.2, 1 )
+margin_left = 416.0
+margin_top = 192.0
+margin_right = 1003.0
+margin_bottom = 374.0
+rect_scale = Vector2( 0.2, 0.2 )
+rect_pivot_offset = Vector2( 13.2564, 8.50535 )
+custom_fonts/font = SubResource( 7 )
+text = "000000"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GoldDiggerPrice" type="Label" parent="."]
+modulate = Color( 0.807843, 0.6, 0.2, 1 )
+margin_left = 416.0
+margin_top = 256.0
+margin_right = 1003.0
+margin_bottom = 438.0
+rect_scale = Vector2( 0.2, 0.2 )
+rect_pivot_offset = Vector2( 13.2564, 8.50535 )
+custom_fonts/font = SubResource( 7 )
+text = "000000"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GoldArrowStrength" type="Label" parent="."]
+modulate = Color( 0.807843, 0.6, 0.2, 1 )
+margin_left = 544.0
+margin_top = 192.0
+margin_right = 821.0
+margin_bottom = 374.0
+rect_scale = Vector2( 0.2, 0.2 )
+rect_pivot_offset = Vector2( 13.2564, 8.50535 )
+custom_fonts/font = SubResource( 7 )
+text = "Gold"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GoldSpeedAttack" type="Label" parent="."]
+modulate = Color( 0.807843, 0.6, 0.2, 1 )
+margin_left = 544.0
+margin_top = 128.0
+margin_right = 821.0
+margin_bottom = 310.0
+rect_scale = Vector2( 0.2, 0.2 )
+rect_pivot_offset = Vector2( 13.2564, 8.50535 )
+custom_fonts/font = SubResource( 7 )
+text = "Gold"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GoldGoldDigger" type="Label" parent="."]
+modulate = Color( 0.807843, 0.6, 0.2, 1 )
+margin_left = 544.0
+margin_top = 256.0
+margin_right = 821.0
+margin_bottom = 438.0
+rect_scale = Vector2( 0.2, 0.2 )
+rect_pivot_offset = Vector2( 13.2564, 8.50535 )
+custom_fonts/font = SubResource( 7 )
+text = "Gold"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GoldSpeed" type="Label" parent="."]
+modulate = Color( 0.807843, 0.6, 0.2, 1 )
+margin_left = 544.0
+margin_top = 64.0
+margin_right = 821.0
+margin_bottom = 246.0
+rect_scale = Vector2( 0.2, 0.2 )
+rect_pivot_offset = Vector2( 13.2564, 8.50535 )
+custom_fonts/font = SubResource( 7 )
+text = "Gold"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GoldLife" type="Label" parent="."]
+modulate = Color( 0.807843, 0.6, 0.2, 1 )
+margin_left = 544.0
+margin_right = 821.0
+margin_bottom = 182.0
+rect_scale = Vector2( 0.2, 0.2 )
+rect_pivot_offset = Vector2( 13.2564, 8.50535 )
+custom_fonts/font = SubResource( 7 )
+text = "Gold"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Gold" type="Label" parent="."]
+modulate = Color( 0.807843, 0.6, 0.2, 1 )
+margin_left = 429.395
+margin_top = -62.8043
+margin_right = 706.395
+margin_bottom = 119.196
+rect_scale = Vector2( 0.2, 0.2 )
+rect_pivot_offset = Vector2( 13.2564, 8.50535 )
+custom_fonts/font = SubResource( 7 )
+text = "Gold"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GoldHero" type="Label" parent="."]
+modulate = Color( 0.807843, 0.6, 0.2, 1 )
+margin_left = 285.395
+margin_top = -62.8043
+margin_right = 894.395
+margin_bottom = 119.196
+rect_scale = Vector2( 0.2, 0.2 )
+rect_pivot_offset = Vector2( 13.2564, 8.50535 )
+custom_fonts/font = SubResource( 7 )
+text = "0000000"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelArrowStrength" type="Label" parent="."]
+margin_left = 112.0
+margin_top = 200.0
+margin_right = 1072.0
+margin_bottom = 382.0
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/font = SubResource( 7 )
+text = "Arrow Strength"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ArrowStrength" type="Label" parent="."]
+margin_left = 304.0
+margin_top = 200.0
+margin_right = 584.0
+margin_bottom = 382.0
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/font = SubResource( 7 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ImSpeedMovemen" type="Button" parent="."]
+margin_left = 366.358
+margin_top = 68.9708
+margin_right = 616.358
+margin_bottom = 268.971
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/font = SubResource( 8 )
+text = "+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ImpLife" type="Button" parent="."]
+margin_left = 366.358
+margin_top = 4.97083
+margin_right = 616.358
+margin_bottom = 204.971
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/font = SubResource( 8 )
+text = "+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ImpSpeedAttack" type="Button" parent="."]
+margin_left = 366.358
+margin_top = 132.971
+margin_right = 616.358
+margin_bottom = 332.971
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/font = SubResource( 8 )
+text = "+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ImpArrowStrength4" type="Button" parent="."]
+margin_left = 366.358
+margin_top = 196.971
+margin_right = 616.358
+margin_bottom = 396.971
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/font = SubResource( 8 )
+text = "+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="buyGoldDigger" type="Button" parent="."]
+margin_left = 366.387
+margin_top = 261.37
+margin_right = 616.387
+margin_bottom = 461.37
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/font = SubResource( 8 )
+text = "+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+modulate = Color( 0.156863, 0.694118, 0.454902, 1 )
+margin_left = 56.0
+margin_top = -152.0
+margin_right = 3136.0
+margin_bottom = 119.0
+rect_scale = Vector2( 0.2, 0.2 )
+custom_fonts/font = SubResource( 9 )
+text = "MARKET"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="coin" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 2 )
+[connection signal="pressed" from="ImSpeedMovemen" to="." method="purchase_SpeedMovement"]
+[connection signal="pressed" from="ImpLife" to="." method="purchase_Life"]
+[connection signal="pressed" from="ImpSpeedAttack" to="." method="purchase_SpeedAttack"]
+[connection signal="pressed" from="ImpArrowStrength4" to="." method="purchase_ArrowStrength"]
+[connection signal="pressed" from="buyGoldDigger" to="." method="purchase_GoldDigger"]

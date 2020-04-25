@@ -1,0 +1,87 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/font/Seagram tfb.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scenes/HeroInfo.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/tools/sound.png" type="Texture" id=3]
+[ext_resource path="res://assets/tools/music.png" type="Texture" id=4]
+[ext_resource path="res://scenes/line.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scripts/Game.gd" type="Script" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 124
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[node name="ArcadeGame" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="HeroInfo" parent="." instance=ExtResource( 2 )]
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="sound" type="TextureButton" parent="."]
+modulate = Color( 0, 0, 0, 0.588235 )
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 1480.0
+margin_top = 968.0
+margin_right = 1980.0
+margin_bottom = 1468.0
+rect_scale = Vector2( 0.126211, 0.129043 )
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="music" type="TextureButton" parent="."]
+modulate = Color( 0.972549, 0.427451, 0.427451, 0.588235 )
+self_modulate = Color( 0.486275, 0, 0, 1 )
+margin_left = 1632.0
+margin_top = 969.074
+margin_right = 2144.0
+margin_bottom = 1481.07
+rect_scale = Vector2( 0.124867, 0.12561 )
+focus_mode = 0
+enabled_focus_mode = 0
+texture_normal = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lineSound" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1510.65, 1001.07 )
+scale = Vector2( 0.729772, 0.78747 )
+points = PoolVector2Array( -32, -32, 1.81334, 1.81334, 32, 32 )
+
+[node name="lineMusic" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1664, 1001.07 )
+scale = Vector2( 0.729772, 0.78747 )
+points = PoolVector2Array( -32, -32, 1.81334, 1.81334, 32, 32 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+show_behind_parent = true
+margin_left = 880.0
+margin_right = 1040.0
+margin_bottom = 80.0
+color = Color( 0.231373, 0.0352941, 0.0352941, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="timer" type="Label" parent="ColorRect"]
+margin_right = 400.0
+margin_bottom = 200.0
+rect_scale = Vector2( 0.4, 0.4 )
+custom_fonts/font = SubResource( 1 )
+text = "00:00"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="timeout" from="Timer" to="." method="onEverySecond"]
+[connection signal="pressed" from="sound" to="." method="_on_sound_pressed"]
+[connection signal="pressed" from="music" to="." method="_on_music_pressed"]

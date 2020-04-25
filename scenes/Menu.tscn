@@ -1,0 +1,105 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/decor/bg-stageOne.png" type="Texture" id=1]
+[ext_resource path="res://assets/tools/sound.png" type="Texture" id=2]
+[ext_resource path="res://assets/tools/music.png" type="Texture" id=3]
+[ext_resource path="res://assets/font/Seagram tfb.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://scenes/Button.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scripts/Menu.gd" type="Script" id=8]
+[ext_resource path="res://scenes/line.tscn" type="PackedScene" id=15]
+[ext_resource path="res://assets/Music/Menu.wav" type="AudioStream" id=16]
+
+[sub_resource type="DynamicFont" id=3]
+size = 182
+outline_size = 14
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[node name="Menu" type="CanvasLayer"]
+script = ExtResource( 8 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 73.5199
+margin_top = 199.657
+margin_right = 4169.52
+margin_bottom = 4295.66
+rect_scale = Vector2( 0.449976, 0.229396 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Sprite" parent="TextureRect"]
+position = Vector2( 1975.91, 785.609 )
+scale = Vector2( 2.21731, 3.99781 )
+texture = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="TextureRect"]
+margin_left = -199.0
+margin_top = 2408.0
+margin_right = 4139.0
+margin_bottom = 3856.0
+color = Color( 0.270588, 0.419608, 0.168627, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sound" type="TextureButton" parent="."]
+modulate = Color( 0, 0, 0, 0.588235 )
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 800.0
+margin_top = 856.0
+margin_right = 1300.0
+margin_bottom = 1356.0
+rect_scale = Vector2( 0.267543, 0.259235 )
+texture_normal = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="music" type="TextureButton" parent="."]
+modulate = Color( 1, 1, 1, 0.588235 )
+margin_left = 1056.0
+margin_top = 856.0
+margin_right = 1568.0
+margin_bottom = 1368.0
+rect_scale = Vector2( 0.254364, 0.252572 )
+texture_normal = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lineSound" parent="." instance=ExtResource( 15 )]
+position = Vector2( 856, 920 )
+scale = Vector2( 1.52381, 1.52381 )
+
+[node name="lineMusic" parent="." instance=ExtResource( 15 )]
+position = Vector2( 1128, 920 )
+scale = Vector2( 1.61905, 1.52381 )
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+volume_db = -9.0
+autoplay = true
+bus = "Music"
+
+[node name="Play" parent="." instance=ExtResource( 5 )]
+
+[node name="Title" type="Label" parent="."]
+margin_left = 176.0
+margin_top = 32.0
+margin_right = 1760.0
+margin_bottom = 344.0
+custom_fonts/font = SubResource( 3 )
+text = "The Lawn Guardian"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" parent="." instance=ExtResource( 5 )]
+margin_top = 616.0
+margin_bottom = 792.0
+text = "EXIT"
+[connection signal="pressed" from="sound" to="." method="_on_sound_pressed"]
+[connection signal="pressed" from="music" to="." method="_on_music_pressed"]
+[connection signal="pressed" from="Play" to="." method="_on_play_click"]
+[connection signal="pressed" from="Exit" to="." method="_on_Exit"]
